@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Báo Cáo Lab 1 - An Toàn Điện Toán Đám Mây</title>
+    <title>BÁO CÁO KẾT QUẢ THỰC HÀNH LAB TUẦN 5 – AN TOÀN ĐIỆN TOÁN ĐÁM MÂY</title>
     <style>
          :root {
             --primary-color: #0056b3;
             --secondary-color: #f8f9fa;
             --text-color: #333;
             --accent-color: #e0f2fe;
+            --dark-blue: #003366;
+            --border-color: #dee2e6;
         }
         
         body {
@@ -32,13 +34,14 @@
         
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 2rem;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
         header p {
             margin: 0.5rem 0 0 0;
-            font-opacity: 0.9;
+            opacity: 0.9;
             font-size: 1.1rem;
         }
         
@@ -50,7 +53,7 @@
         
         .section {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             margin-bottom: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -61,48 +64,87 @@
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 0.5rem;
             margin-top: 0;
+            font-size: 1.4rem;
+            text-transform: uppercase;
         }
         
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 16fr));
-            gap: 1.5rem;
+        h3 {
+            color: var(--dark-blue);
             margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
         }
         
-        .card {
-            background: var(--secondary-color);
-            border-left: 5px solid var(--primary-color);
-            padding: 1.5rem;
-            border-radius: 4px;
-            transition: transform 0.2s;
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: #fff;
         }
-        
-        .card:hover {
-            transform: translateY(-3px);
+
+        .meta-table td {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
         }
-        
-        .card h3 {
-            margin-top: 0;
-            color: #003366;
-        }
-        
-        .badge {
-            display: inline-block;
-            background-color: #0056b3;
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
+
+        .meta-table td.label {
+            background-color: var(--secondary-color);
             font-weight: bold;
+            width: 20%;
+            color: var(--dark-blue);
         }
         
-        ul {
-            padding-left: 1.2rem;
+        p {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         li {
             margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            color: #e11d48;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+
+        .highlight-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0284c7;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+            font-style: italic;
+        }
+
+        .lab-block {
+            background: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .lab-block h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
         }
         
         footer {
@@ -119,45 +161,113 @@
 <body>
 
     <header>
-        <h1>LAB TUẦN 1: AN TOÀN ĐIỆN TOÁN ĐÁM MÂY</h1>
+        <h1>BÁO CÁO KẾT QUẢ THỰC HÀNH<br>LAB TUẦN 5 – AN TOÀN ĐIỆN TOÁN ĐÁM MÂY</h1>
         <p>Học phần: An toàn Điện toán Đám mây | Nền tảng Cloudflare Pages</p>
     </header>
 
     <div class="container">
 
-        <!-- THÀNH VIÊN NHÓM -->
+        <!-- THÔNG TIN CHUNG -->
         <div class="section">
-            <h2>👥 Thành Viên Nhóm Thực Hiện</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Nguyễn Diệp Thiên Quân</h3>
-                    <p><strong>MSSV:</strong> 22004223</p>
-                    <span class="badge">Thành viên 1</span>
-                </div>
-                <div class="card">
-                    <h3>Nguyễn Đức Kiên</h3>
-                    <p><strong>MSSV:</strong> 22004322</p>
-                    <span class="badge">Thành viên 2</span>
-                </div>
+            <h2>📊 Thông Tin Chung</h2>
+            <table class="meta-table">
+                <tr>
+                    <td class="label">Môn Học</td>
+                    <td>An toàn điện toán đám mây</td>
+                    <td class="label">Ngày Thực Hiện</td>
+                    <td>14/06/2026</td>
+                </tr>
+                <tr>
+                    <td class="label">Tên SV</td>
+                    <td>Nguyễn Đức Kiên - Nguyễn Diệp Thiên Quân</td>
+                    <td class="label">MSSV</td>
+                    <td>22004322 - 22004223</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- YÊU CẦU 1 -->
+        <div class="section">
+            <h2>🛡️ YÊU CẦU 1: KIẾN THỨC CƠ BẢN VỀ INCIDENT RESPONSE (IR)</h2>
+            
+            <h3>1. Incident Response (Ứng phó sự cố) là gì?</h3>
+            <p>Ứng phó sự cố (Incident Response) là quy trình tổ chức chuẩn bị, phát hiện, phân tích và phản ứng với các sự cố an toàn thông tin nhằm cô lập và loại bỏ mối đe dọa. Trong vòng đời ứng phó sự cố này, các bước kỹ thuật và vận hành đóng vai trò như bộ xương sống của toàn bộ quy trình. Chúng bao gồm các thao tác ngăn chặn sự cố thông qua việc xác định lỗ hổng, tiếp đến là đi sâu điều tra phạm vi lây nhiễm cùng cách thức tin tặc xâm nhập vào hệ thống. Cuối cùng, quy trình này cung cấp các dữ liệu quan trọng phục vụ cho việc đánh giá, báo cáo và đưa ra quyết định xử lý. Đặc biệt trong môi trường điện toán đám mây vốn phức tạp và phân tán, Incident Response đóng vai trò sống còn giúp xóa bỏ các "điểm mù". Nó cho phép đội ngũ vận hành cô lập nhanh chóng hệ thống bị lỗi, chặn các địa chỉ IP độc hại và giảm thiểu tối đa thời gian downtime. Đồng thời, quy trình này cũng giúp định hình rõ trách nhiệm xử lý và điều tra dựa vào Mô hình Trách nhiệm Chia sẻ (Shared Responsibility Model) giữa khách hàng và nhà cung cấp dịch vụ đám mây.</p>
+
+            <h3>2. Dấu hiệu cho thấy sự cố an toàn đang xảy ra</h3>
+            <p>Một sự cố an toàn đang diễn ra thường bộc lộ qua nhiều dấu hiệu bất thường. Dễ thấy nhất là sự xuất hiện của lượng request tăng cao đột biến trong một khoảng thời gian ngắn (ví dụ chỉ trong 10 phút), hoặc hệ thống liên tục ghi nhận nhiều lần đăng nhập thất bại. Quản trị viên cũng có thể phát hiện các truy cập đến từ những địa chỉ IP hoặc vị trí địa lý không quen thuộc. Ngoài ra, việc ghi nhận các HTTP request cố tình nhắm vào các đường dẫn ẩn, tệp tin hệ thống, chứa payload mã độc, hay sự gia tăng bất thường của các mã lỗi HTTP từ phía backend (như 500 Internal Server Error) cũng là những cảnh báo đỏ.</p>
+
+            <h3>3. Sự cố này có thể thuộc loại nào?</h3>
+            <p>Tùy thuộc vào các dấu hiệu trên, sự cố có thể được phân loại thành nhiều nhóm khác nhau. Tấn công brute-force thường được nhận diện khi có nhiều lần đăng nhập thất bại liên tiếp trong thời gian ngắn. Khai thác lỗ hổng ứng dụng xảy ra khi kẻ tấn công tiêm mã độc (chẳng hạn như đoạn mã SQL <code>' or 1=1--</code>) vào các trường nhập liệu nhằm đánh lừa hệ thống xác thực. Trong khi đó, sự cố lộ tài khoản hay chiếm quyền (Broken Access Control) diễn ra khi hệ thống không ngăn chặn được người dùng truy cập vào các khu vực bị hạn chế, hoặc khi tin tặc lợi dụng các lỗi Injection để đăng nhập thẳng vào tài khoản quản trị viên mà không cần đến mật khẩu.</p>
+
+            <h3>4. Nếu không có monitoring và logging, sự cố này có được phát hiện không? Vì sao?</h3>
+            <p>Nếu thiếu đi hệ thống giám sát (Monitoring) và lưu vết (Logging), các sự cố an toàn thông tin sẽ không thể được phát hiện một cách kịp thời. Cụ thể, nếu hệ thống chỉ trang bị Monitoring mà bỏ qua Logging, quản trị viên có thể nhận được cảnh báo về một nỗ lực tấn công nhưng lại không thể tiến hành điều tra do thiếu dữ liệu về địa chỉ IP để xác định danh tính thủ phạm. Sự thiếu hụt thông tin này trực tiếp dẫn đến việc quản trị viên không thể thiết lập các quy tắc tường lửa (Firewall rules) nhằm chặn đứng chính xác nguồn phát sinh tấn công. Bên cạnh đó, quá trình truy tìm nguyên nhân gốc rễ cũng sẽ gặp rào cản lớn do không có các bản ghi dạng văn bản để tái hiện lại chuỗi sự kiện đã xảy ra. Đồng thời, việc không có bằng chứng lưu vết danh tính sẽ khiến tổ chức không thể quy kết và xác định rõ trách nhiệm (Accountability) của các bên liên quan. Hệ quả tất yếu của những lỗ hổng này là sự cố sẽ bị phát hiện rất muộn, vô tình tạo ra khoảng thời gian vàng để tin tặc tự do leo thang đặc quyền, đánh cắp dữ liệu nhạy cảm hoặc thậm chí là mã hóa toàn bộ máy chủ.</p>
+
+            <h3>5. Phân tích chu trình Incident Response (Theo NIST)</h3>
+            <p>Dựa trên kiến thức của các bài thực hành, chu trình Incident Response theo chuẩn NIST là một chuỗi hành động liên kết chặt chẽ. Bước đầu tiên là Chuẩn bị (Preparation), nơi hệ thống được làm cứng thông qua việc cấu hình các Tiêu đề bảo mật (Security Headers), thiết lập tường lửa WAF và áp dụng cơ chế phân quyền (Role-Based Access Control). Chuyển sang giai đoạn Phát hiện và Phân tích (Detection & Analysis), hệ thống sẽ kết hợp Monitoring để chủ động phát hiện sự bất thường (anomaly detection), đồng thời sử dụng dữ liệu từ Logging để phục vụ quá trình điều tra số (Forensics analysis). Quá trình này giúp trả lời trọn vẹn các câu hỏi cốt lõi: Ai, Khi nào, Cái gì, Ở đâu và Kết quả ra sao. Ở bước Ngăn chặn, Loại trừ và Phục hồi (Containment, Eradication & Recovery), đội ngũ sẽ tiến hành cô lập nhanh chóng hệ thống đang bị lỗi và cấu hình Firewall rules để chặn đứng các IP độc hại. Cuối cùng, trong giai đoạn Hoạt động sau sự cố (Post-Incident Activity), mọi dữ liệu Log dạng văn bản cùng dấu thời gian chi tiết sẽ được thu thập làm bằng chứng để báo cáo sự cố (Review and Report) và đưa ra các quyết định cải tiến hệ thống.</p>
+        </div>
+
+        <!-- BÁO CÁO TỔNG HỢP VÀ ĐÁNH GIÁ -->
+        <div class="section">
+            <h2>📋 BÁO CÁO TỔNG HỢP VÀ ĐÁNH GIÁ QUÁ TRÌNH THỰC HIỆN HỌC PHẦN "AN TOÀN ĐIỆN TOÁN ĐÁM MÂY"</h2>
+            
+            <h3>TỔNG QUAN HỌC PHẦN</h3>
+            <p class="highlight-box">Trải qua chuỗi thực hành từ Lab 1 đến Lab 5, học phần đã định hình một tư duy phòng thủ toàn diện (Defense in Depth) đối với môi trường điện toán đám mây. Kiến thức được xâu chuỗi logic thành một vòng đời bảo mật khép kín, đi từ việc thiết kế hạ tầng an toàn, chủ động tìm kiếm lỗ hổng, thiết lập hệ thống giám sát, cho đến phản ứng nhanh trước các sự cố thực tế. Qua đó, người học thấu hiểu được rằng bảo mật không phải là một trạng thái tĩnh, mà là một quy trình vận hành liên tục đòi hỏi sự kết hợp giữa công nghệ và tư duy của người kỹ sư.</p>
+
+            <!-- LAB 1 -->
+            <div class="lab-block">
+                <h4>LAB 1: KIẾN TRÚC ĐÁM MÂY VÀ THIẾT KẾ AN TOÀN TỪ ĐẦU (SECURE BY DESIGN)</h4>
+                <p>Trong giai đoạn đầu tiên, trọng tâm được đặt vào việc thiết lập hạ tầng và phân chia quyền kiểm soát. Môi trường đám mây mang lại sự linh hoạt nhưng cũng tiềm ẩn rủi ro lớn nếu hệ thống không được cấu hình chuẩn mực ngay từ những dòng mã đầu tiên. Việc tự động hóa triển khai và ứng dụng các lớp bảo vệ tại vùng biên mạng chính là lá chắn đầu tiên bảo vệ ứng dụng.</p>
+                <p><strong>Các kỹ năng thực hành và mở rộng thực tế:</strong></p>
+                <ul>
+                    <li>Xây dựng và phân định rõ ranh giới trách nhiệm quản lý hệ thống trên các mô hình dịch vụ đám mây (IaaS, PaaS, SaaS).</li>
+                    <li>Tự động hóa quá trình đưa mã nguồn lên môi trường mạng bằng cách áp dụng quy trình tích hợp liên tục (CI/CD) với nền tảng Cloudflare Pages.</li>
+                    <li>Ứng dụng mạng phân phối nội dung (CDN) để tăng tốc độ trang, đồng thời giảm thiểu rủi ro từ các cuộc tấn công từ chối dịch vụ (DDoS).</li>
+                    <li>Cấu hình các Tiêu đề bảo mật (Security Headers) nhằm bảo vệ lớp trình duyệt của người dùng cuối.</li>
+                </ul>
+                <p><strong>Góc nhìn thực tế:</strong> Những kỹ năng nền tảng này đóng vai trò cốt lõi trong triết lý DevSecOps hiện đại, nơi việc kiểm tra bảo mật được thực hiện tự động và liên tục (Shift-Left Security), thường được kết hợp với các công cụ triển khai hạ tầng dưới dạng mã (IaC) như Terraform để ngăn ngừa lỗi do cấu hình thủ công.</p>
             </div>
-        </div>
 
-        <!-- NỘI DUNG CHÍNH CỦA LAB -->
-        <div class="section">
-            <h2>📝 Nội Dung Nội Dung Thực Hành</h2>
-            <p>Trang web tĩnh này được triển khai nhằm mục đích hoàn thành nội dung thực hành Tuần 1, bao gồm các mục tiêu cốt lõi sau:</p>
-            <ul>
-                <li><strong>Yêu cầu 1:</strong> Tìm hiểu lý thuyết cơ bản về kiến trúc Điện toán đám mây (IaaS, PaaS, SaaS), tìm hiểu về cơ chế hoạt động, vai trò đối với hiệu năng và an toàn của CDN (Content Delivery Network).</li>
-                <li><strong>Yêu cầu 2:</strong> Xây dựng mã nguồn trang web tĩnh (HTML/CSS), đồng bộ hóa và quản lý mã nguồn thông qua hệ thống kiểm soát phiên bản GitHub, sau đó thực hiện cấu hình tự động triển khai (CI/CD) lên nền tảng Cloudflare Pages.</li>
-                <li><strong>Yêu cầu 3:</strong> Tiến hành thực nghiệm, phân tích cấu hình an toàn bảo mật HTTP Response Headers qua công cụ Security Headers và đánh giá tối ưu hóa trải nghiệm, tốc độ tải trang qua Google PageSpeed Insights.</li>
-            </ul>
-        </div>
+            <!-- LAB 3 -->
+            <div class="lab-block">
+                <h4>LAB 3: TƯ DUY KẺ TẤN CÔNG VÀ NHẬN DIỆN LỖ HỔNG (OFFENSIVE SECURITY)</h4>
+                <p>Bảo mật không chỉ là xây tường phòng ngự mà còn phải thấu hiểu phương thức tin tặc khai thác hệ thống. Giai đoạn này trang bị tư duy tấn công chủ động bằng cách đặt sinh viên vào vị trí của một hacker, qua đó bóc tách cách thức các lỗ hổng phát sinh từ việc thiếu xác thực dữ liệu đầu vào hoặc sai sót trong logic phân quyền.</p>
+                <p><strong>Các kỹ năng thực hành và mở rộng thực tế:</strong></p>
+                <ul>
+                    <li>Nắm vững cơ chế hoạt động của giao thức HTTPS và công nghệ mật mã TLS trong việc đảm bảo tính toàn vẹn của dữ liệu.</li>
+                    <li>Trực tiếp kiểm thử và rà quét các lỗ hổng bảo mật trên môi trường OWASP Juice Shop dựa theo tiêu chuẩn OWASP Top 10.</li>
+                    <li>Phân tích nguyên nhân và đề xuất phương án khắc phục triệt để cho các lỗ hổng nghiêm trọng như: SQL Injection, Broken Access Control, và Security Misconfiguration.</li>
+                </ul>
+                <p><strong>Góc nhìn thực tế:</strong> Khi hệ thống mở rộng theo kiến trúc Microservices, kẻ tấn công sẽ chuyển hướng nhắm vào các giao diện API. Các kỹ sư hiện nay không chỉ rà quét thủ công mà phải áp dụng hệ thống quét tự động (SAST/DAST) và sử dụng các giao thức xác thực nâng cao như OAuth 2.0 hoặc JWT để kiểm soát truy cập khắt khe hơn.</p>
+            </div>
 
-        <!-- KIẾN TRÚC TRIỂN KHAI -->
-        <div class="section">
-            <h2>⚙️ Mô Hình Kiến Trúc Ứng Dụng</h2>
-            <p>Hệ thống được cấu hình vận hành hoàn toàn tự động theo quy trình hiện đại:</p>
-            <p><strong>Mã nguồn (Local)</strong> &rarr; <strong>Đẩy lên GitHub Repository</strong> &rarr; <strong>Kích hoạt Webhook</strong> &rarr; <strong>Cloudflare Pages tự động biên dịch và phân phối ra mạng lưới CDN toàn cầu</strong>.</p>
+            <!-- LAB 4 -->
+            <div class="lab-block">
+                <h4>LAB 4: XÓA BỎ "ĐIỂM MÙ" BẰNG CÔNG TÁC GIÁM SÁT VÀ LƯU VẾT (VISIBILITY & FORENSICS)</h4>
+                <p>Một hệ thống an toàn là hệ thống luôn nằm trong tầm quan sát của người quản trị. Việc thiết lập khả năng hiển thị bảo mật (Security Visibility) giúp bóc tách và phân biệt rõ ràng vai trò bổ trợ cho nhau giữa việc theo dõi bức tranh toàn cảnh (Monitoring) và khả năng "đào sâu" truy vết chi tiết (Logging) khi có sự cố phát sinh.</p>
+                <p><strong>Các kỹ năng thực hành và mở rộng thực tế:</strong></p>
+                <ul>
+                    <li>Tối ưu hóa Security Visibility để quan sát dòng chảy dữ liệu bên trong các môi trường điện toán phân tán.</li>
+                    <li>Áp dụng Monitoring thông qua các chỉ số đo lường dạng số (Metrics) để phát hiện sự bất thường về lưu lượng và xu hướng sử dụng tài nguyên.</li>
+                    <li>Khai thác hệ thống Logging dạng văn bản (Text-based) như một công cụ điều tra số (Forensics) nhằm truy vết nguyên nhân gốc rễ và hành vi của kẻ tấn công.</li>
+                </ul>
+                <p><strong>Góc nhìn thực tế:</strong> Đối với các trung tâm giám sát (SOC) quy mô lớn, dữ liệu log khổng lồ sẽ được đưa về các hệ thống SIEM (như Splunk, ELK) để tự động tương quan hóa các sự kiện. Nó giúp phát hiện nhanh một chuỗi tấn công tinh vi lẩn khuất giữa hàng triệu bản ghi hợp lệ thông thường.</p>
+            </div>
+
+            <!-- LAB 5 -->
+            <div class="lab-block">
+                <h4>LAB TUẦN 5: SẴN SÀNG ỨNG PHÓ SỰ CỐ VÀ PHỤC HỒI (INCIDENT RESPONSE)</h4>
+                <p>Chặng cuối cùng đặt hệ thống vào tình trạng khẩn cấp. Lúc này, quy trình bài bản và tốc độ phản ứng là yếu tố quyết định để giới hạn thiệt hại. Việc ứng phó sự cố đòi hỏi đội ngũ vận hành phải biết kết hợp dữ liệu, đưa ra đánh giá chính xác và thực thi các biện pháp ngăn chặn lập tức trước khi hệ thống bị tổn hại sâu hơn.</p>
+                <p><strong>Các kỹ năng thực hành và mở rộng thực tế:</strong></p>
+                <ul>
+                    <li>Phân tích và thực thi các bước cơ bản trong Chu trình Ứng phó sự cố (Incident Response Lifecycle) theo chuẩn NIST.</li>
+                    <li>Kết hợp các cảnh báo từ quá trình Monitoring và dấu vết từ Logging để xác định chính xác tính chất, quy mô của sự kiện rủi ro.</li>
+                    <li>Triển khai các biện pháp ngăn chặn tức thời như: cô lập hệ thống, khóa tài khoản, hoặc thiết lập quy tắc tường lửa (Firewall rules) để chặn IP tấn công.</li>
+                </ul>
+                <p><strong>Góc nhìn thực tế:</strong> Thay vì phản ứng thủ công, các doanh nghiệp đang chuyển dịch sang việc dùng hệ thống điều phối tự động SOAR. Hệ thống này có thể tự động đọc cảnh báo, phân tích log và gọi API để chặn một luồng tấn công tấn công trong chưa tới 1 giây. Sau mỗi sự cố, các kịch bản phản ứng (Playbook) sẽ được làm mới để "miễn dịch" với các cuộc tấn công tương tự.</p>
+            </div>
+
+            <h3>KẾT LUẬN CHUNG</h3>
+            <p>Nhìn lại toàn bộ tiến trình học tập, học phần không chỉ cung cấp thao tác kỹ thuật mà còn định hình tư duy hệ thống của một kiến trúc sư bảo mật đám mây. Những bài học cốt lõi nhất được rút ra là: mọi dữ liệu đầu vào (input) từ người dùng đều phải được xem là độc hại và cần phải được lọc nghiêm ngặt; việc đánh mất hoặc không lưu trữ file log đồng nghĩa với việc tự tước đi công cụ điều tra khi có sự cố; và quan trọng nhất, bảo mật an toàn thông tin không bao giờ là một đích đến cố định. Đó là một vòng tuần hoàn liên tục của việc xây dựng, giám sát, phòng thủ và nâng cấp để đảm bảo hệ thống luôn sẵn sàng trước các mối đe dọa không ngừng tiến hóa.</p>
         </div>
 
     </div>
